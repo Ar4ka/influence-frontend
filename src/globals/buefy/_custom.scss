@@ -10,3 +10,5 @@ $colors: (
   "warning": ($warning, $warning-invert),
   "danger": ($danger, $danger-invert)
 );
+@import "https://cdn.materialdesignicons.com/5.1.45/css/materialdesignicons.min.css";
+@import "https://unpkg.com/buefy@0.8.17/dist/buefy.min.css";

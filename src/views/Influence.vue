@@ -1,0 +1,106 @@
+<template>
+    <div class="influence">
+        <div class="container is-desktop">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title title is-4 is-centered">
+                        Influence Detail
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <div class="columns is-mobile is-vcentered">
+                                <div class="column">
+                                    <p class="bd-notification is-info">Lifetime:</p>
+                                </div>
+                                <div class="column">
+                                    <p class="bd-notification is-info">{{ corporateer.lifetimeInfluence }}</p>
+                                </div>
+                            </div>
+                            <div class="columns is-mobile is-vcentered">
+                                <div class="column">
+                                    <p class="bd-notification is-info">Total:</p>
+                                </div>
+                                <div class="column">
+                                    <p class="bd-notification is-info">{{ corporateer.totalInfluence }}</p>
+                                </div>
+                            </div>
+                            <div class="columns is-mobile is-vcentered">
+                                <div class="column">
+                                    <p class="bd-notification is-info">Tributes for this Week left:</p>
+                                </div>
+                                <div class="column">
+                                    <p class="bd-notification is-info">{{ corporateer.tributes }}</p>
+                                </div>
+                            </div>
+                            <div class="columns is-mobile is-vcentered">
+                                <div class="column">
+                                    <p class="bd-notification is-info">Max Tributes to hold:</p>
+                                </div>
+                                <div class="column">
+                                    <p class="bd-notification is-info">I have no f**** clue where to look for that!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container is-desktop">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title is-centered title is-4">
+                        All Influence by Division
+                    </p>
+                </header>
+                <div class="card-content">
+                    <template>
+                        <b-table :bordered="true" :striped="true" :hoverable="true" :data="currentInfluences" :columns="columns"></b-table>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import allInfluences from "../../testdata/currentInfluences";
+
+    export default {
+        name: "Influence",
+        data() {
+            return {
+                corporateer: this.$store.state.currentCorporateer,
+                currentInfluences: [],
+                allInfluences,
+                columns: [
+                    {
+                        field: 'department',
+                        label: 'Department',
+                    },
+                    {
+                        field: 'division',
+                        label: 'Division',
+                    },
+                    {
+                        field: 'amount',
+                        label: 'Amount',
+                    },
+                ]
+            }
+        },
+        created() {
+            for(let i = 0; i < this.allInfluences.length; i++)
+            {
+                if(this.allInfluences[i].amount !== 0) {
+                    this.currentInfluences.push(this.allInfluences[i]);
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

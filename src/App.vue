@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <b-navbar :id="'nav'" :type="'is-light'">
+            <template slot="brand">
+                <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                    <img
+                            src="https://forum.thecorporateer.com/styles/material/uix/logo_corp_bw_light.png"
+                            alt="CORP"
+                    >
+                </b-navbar-item>
+            </template>
+            <template slot="start">
+                <b-navbar-item tag="router-link" :to="{ path: '/'}">
+                    Home
+                </b-navbar-item>
+                <b-navbar-item tag="router-link" :to="{ path: '/profile'}">
+                    Profile
+                </b-navbar-item>
+                <b-navbar-dropdown label="Influence" :collapsible="true">
+                    <b-navbar-item tag="router-link" :to="{ path: '/influence'}">
+                        Details
+                    </b-navbar-item>
+                    <b-navbar-item tag="router-link" :to="{ path: '/history'}">
+                        History
+                    </b-navbar-item>
+                </b-navbar-dropdown>
+            </template>
+        </b-navbar>
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
     }
-  }
-}
+    #nav {
+        margin-bottom: 2rem;
+    }
 </style>
