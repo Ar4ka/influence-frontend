@@ -39,7 +39,7 @@
                                     <p class="bd-notification is-info">Max Tributes to hold:</p>
                                 </div>
                                 <div class="column">
-                                    <p class="bd-notification is-info">I have no f**** clue where to look for that!</p>
+                                    <p class="bd-notification is-info">{{ 1.5*corporateer.rank.tributesPerWeek }}</p>
                                 </div>
                             </div>
                         </div>
@@ -55,9 +55,28 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <template>
-                        <b-table :bordered="true" :striped="true" :hoverable="true" :data="currentInfluences" :columns="columns"></b-table>
-                    </template>
+                    <b-table
+                            :data="currentInfluences"
+                            striped="true"
+                            hoverable="true"
+                            bordered="true">
+
+                        <template slot-scope="props">
+                            <b-table-column field="department" label="Department">
+                                <div v-if="props.row.department !=='none'">{{ props.row.department }}</div>
+                                <div v-else>General</div>
+                            </b-table-column>
+
+                            <b-table-column field="division" label="Division">
+                                <div v-if="props.row.division !=='none'">{{ props.row.division }}</div>
+                                <div v-else>General</div>
+                            </b-table-column>
+
+                            <b-table-column field="amount" label="Amount">
+                                {{ props.row.amount }}
+                            </b-table-column>
+                        </template>
+                    </b-table>
                 </div>
             </div>
         </div>
@@ -91,9 +110,8 @@
             }
         },
         created() {
-            for(let i = 0; i < this.allInfluences.length; i++)
-            {
-                if(this.allInfluences[i].amount !== 0) {
+            for (let i = 0; i < this.allInfluences.length; i++) {
+                if (this.allInfluences[i].amount !== 0) {
                     this.currentInfluences.push(this.allInfluences[i]);
                 }
             }

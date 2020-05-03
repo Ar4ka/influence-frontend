@@ -58,7 +58,7 @@
                 </header>
                 <div class="card-content">
                     <template>
-                        <b-table :data="corporateer.memberOfDivisions" :columns="columns"></b-table>
+                        <b-table :data="corporateer.memberOfDivisions" :columns="columns" hoverable="true" bordered="true" striped="true"></b-table>
                     </template>
                 </div>
             </div>
@@ -75,13 +75,14 @@
                 corporateer: this.$store.state.currentCorporateer,
                 columns: [
                     {
-                        field: 'name',
-                        label: 'Division',
-                    },
-                    {
                         field: 'department.name',
                         label: 'Department',
                     },
+                    {
+                        field: 'name',
+                        label: 'Division',
+                    },
+
                 ]
             }
         }

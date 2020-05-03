@@ -25,7 +25,9 @@
                                     aria-next-label="Next page"
                                     aria-previous-label="Previous page"
                                     aria-page-label="Page"
-                                    aria-current-label="Current page">
+                                    aria-current-label="Current page"
+                                    hoverable="true"
+                                    narrowed="true">
 
                                 <template slot-scope="props">
                                     <b-table-column field="sender" label="Sender" sortable>
@@ -42,6 +44,12 @@
                                     </b-table-column>
                                     <b-table-column field="amount" label="Amount" sortable>
                                         {{ props.row.amount }}
+                                    </b-table-column>
+                                    <b-table-column field="division" label="Type">
+                                        <div v-if="props.row.division !== 'none'">{{ props.row.division }}</div>
+                                        <div v-else-if="props.row.department !== 'none'">{{ props.row.department }}
+                                        </div>
+                                        <div v-else>General</div>
                                     </b-table-column>
                                 </template>
                             </b-table>
@@ -62,7 +70,9 @@
                                     aria-next-label="Next page"
                                     aria-previous-label="Previous page"
                                     aria-page-label="Page"
-                                    aria-current-label="Current page">
+                                    aria-current-label="Current page"
+                                    hoverable="true"
+                                    narrowed="true">
 
                                 <template slot-scope="props">
 
@@ -79,6 +89,12 @@
                                     </b-table-column>
                                     <b-table-column field="amount" label="Amount" sortable>
                                         {{ props.row.amount }}
+                                    </b-table-column>
+                                    <b-table-column field="division" label="Type">
+                                        <div v-if="props.row.division !== 'none'">{{ props.row.division }}</div>
+                                        <div v-else-if="props.row.department !== 'none'">{{ props.row.department }}
+                                        </div>
+                                        <div v-else>General</div>
                                     </b-table-column>
                                 </template>
                             </b-table>
@@ -100,53 +116,9 @@
             return {
                 receiver,
                 sender,
-                columnsReceiver: [
-                    {
-                        field: 'timestamp',
-                        label: 'Time',
-                    },
-                    {
-                        field: 'sender',
-                        label: 'Sender',
-                    },
-                    {
-                        field: 'receiver',
-                        label: 'Receiver',
-                    },
-                    {
-                        field: 'amount',
-                        label: 'Amount',
-                    },
-                    {
-                        field: 'message',
-                        label: 'Message',
-                    },
-                ],
-                columnsSender: [
-                    {
-                        field: 'timestamp',
-                        label: 'Time',
-                    },
-                    {
-                        field: 'receiver',
-                        label: 'Receiver',
-                    },
-                    {
-                        field: 'sender',
-                        label: 'Sender',
-                    },
-                    {
-                        field: 'amount',
-                        label: 'Amount',
-                    },
-                    {
-                        field: 'message',
-                        label: 'Message',
-                    },
-                ],
                 isPaginated: true,
                 isPaginationSimple: false,
-                paginationPosition: 'bottom',
+                paginationPosition: 'top',
                 defaultSortDirection: 'desc',
                 sortIcon: 'arrow-up',
                 sortIconSize: 'is-small',
