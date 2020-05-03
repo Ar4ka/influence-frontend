@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1 class="title">Keep in mind it's a first iteration to show some data of the influence system. All data is static and my personal Influence data. </h1>
-    <a href="https://docs.google.com/spreadsheets/d/1897JabntD6oXgpuJz2eZvnmJlK65kG_2bfDc2BPaIBc/edit?usp=sharing" target="_blank"><b-button type="is-info">Feedback</b-button></a>
+    <h1 class="title">Keep in mind it's a first iteration to show some data of the influence system.</h1>
+    <h1 class="title">All data is static and my personal Influence data. </h1>
+    <a href="https://docs.google.com/spreadsheets/d/1jYZVMuEzmTD8mbZmDwTffxfgCFTZXSnrVcpCqys_Gp4/edit?usp=sharing" target="_blank"><b-button type="is-info">Feedback</b-button></a>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -33,29 +34,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
-</script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  h3 {
+    margin: 40px 0 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
 </style>
