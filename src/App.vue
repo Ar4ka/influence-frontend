@@ -1,12 +1,10 @@
 <template>
     <div id="app">
-        <b-navbar :id="'nav'" :type="'is-light'">
+        <b-navbar :id="'nav'" :type="'is-dark'">
             <template slot="brand">
                 <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                    <img
-                            src="https://forum.thecorporateer.com/styles/material/uix/logo_corp_bw_light.png"
-                            alt="CORP"
-                    >
+                    <img :src="require('@/assets/logo.png')"
+                            alt="CORP">
                 </b-navbar-item>
             </template>
             <template slot="start">
