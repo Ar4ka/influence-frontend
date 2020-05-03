@@ -57,7 +57,7 @@
                 <div class="card-content">
                     <b-table
                             :data="currentInfluences"
-                            striped="true"
+                            :striped="true"
                             :hoverable="true"
                             :bordered="true">
 
