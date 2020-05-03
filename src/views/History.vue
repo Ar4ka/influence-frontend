@@ -26,8 +26,8 @@
                                     aria-previous-label="Previous page"
                                     aria-page-label="Page"
                                     aria-current-label="Current page"
-                                    hoverable="true"
-                                    narrowed="true">
+                                    :hoverable="true"
+                                    :narrowed="true">
 
                                 <template slot-scope="props">
                                     <b-table-column field="sender" label="Sender" sortable>
@@ -71,8 +71,8 @@
                                     aria-previous-label="Previous page"
                                     aria-page-label="Page"
                                     aria-current-label="Current page"
-                                    hoverable="true"
-                                    narrowed="true">
+                                    :hoverable="true"
+                                    :narrowed="true">
 
                                 <template slot-scope="props">
 

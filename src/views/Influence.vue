@@ -58,8 +58,8 @@
                     <b-table
                             :data="currentInfluences"
                             striped="true"
-                            hoverable="true"
-                            bordered="true">
+                            :hoverable="true"
+                            :bordered="true">
 
                         <template slot-scope="props">
                             <b-table-column field="department" label="Department">
@@ -93,20 +93,6 @@
                 corporateer: this.$store.state.currentCorporateer,
                 currentInfluences: [],
                 allInfluences,
-                columns: [
-                    {
-                        field: 'department',
-                        label: 'Department',
-                    },
-                    {
-                        field: 'division',
-                        label: 'Division',
-                    },
-                    {
-                        field: 'amount',
-                        label: 'Amount',
-                    },
-                ]
             }
         },
         created() {

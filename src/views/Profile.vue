@@ -58,7 +58,7 @@
                 </header>
                 <div class="card-content">
                     <template>
-                        <b-table :data="corporateer.memberOfDivisions" :columns="columns" hoverable="true" bordered="true" striped="true"></b-table>
+                        <b-table :data="corporateer.memberOfDivisions" :columns="columns" :hoverable="true" :bordered="true" :striped="true"></b-table>
                     </template>
                 </div>
             </div>
