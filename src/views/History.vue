@@ -1,6 +1,6 @@
 <template>
     <div class="history">
-        <div class="container is-desktop">
+        <div class="container is-widescreen">
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title title is-4 is-centered">
