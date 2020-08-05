@@ -107,15 +107,11 @@
 </template>
 
 <script>
-    import receiver from "../../testdata/receiver";
-    import sender from "../../testdata/sender";
 
     export default {
         name: "History",
         data() {
             return {
-                receiver,
-                sender,
                 isPaginated: true,
                 isPaginationSimple: false,
                 paginationPosition: 'top',
@@ -126,7 +122,15 @@
                 currentPageSender: 1,
                 perPage: 15
             }
+        },
+      computed: {
+          sender() {
+            return this.$store.state.sender;
+          },
+        receiver() {
+            return this.$store.state.receiver;
         }
+      }
     }
 </script>
 

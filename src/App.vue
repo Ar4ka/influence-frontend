@@ -23,6 +23,11 @@
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
+      <template slot="end">
+        <b-navbar-item tag="router-link" :to="{ path: '/login'}">
+          Logout
+        </b-navbar-item>
+      </template>
     </b-navbar>
     <router-view/>
   </div>

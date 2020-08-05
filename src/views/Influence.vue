@@ -84,24 +84,30 @@
 </template>
 
 <script>
-    import allInfluences from "../../testdata/currentInfluences";
+
 
     export default {
         name: "Influence",
         data() {
             return {
-                corporateer: this.$store.state.currentCorporateer,
-                currentInfluences: [],
-                allInfluences,
             }
         },
-        created() {
-            for (let i = 0; i < this.allInfluences.length; i++) {
-                if (this.allInfluences[i].amount !== 0) {
-                    this.currentInfluences.push(this.allInfluences[i]);
-                }
+      computed: {
+          corporateer() {
+            return this.$store.state.currentCorporateer;
+          },
+        currentInfluences() {
+            const influences = [];
+            const allInfluences = [...this.$store.state.currentInfluences];
+            console.log(allInfluences)
+          for (let i = 0; i < allInfluences.length; i++) {
+            if (allInfluences[i].amount !== 0) {
+              influences.push(allInfluences[i]);
             }
-        }
+          }
+          return influences
+        },
+      },
     }
 </script>
 
