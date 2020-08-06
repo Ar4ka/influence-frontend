@@ -24,7 +24,7 @@
         </b-navbar-dropdown>
       </template>
       <template slot="end">
-        <b-navbar-item tag="router-link" :to="{ path: '/login'}">
+        <b-navbar-item tag="router-link" v-if="$store.state.currentCorporateer.name" :to="{ path: '/login'}">
           Logout
         </b-navbar-item>
       </template>

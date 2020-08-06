@@ -11,7 +11,6 @@
           <div class="columns is-widescreen">
             <div class="column is-4  is-offset-4">
               <form @submit.prevent="handleLogin">
-
                 <b-field label="Username">
                   <b-input v-model="username"></b-input>
                 </b-field>
@@ -62,6 +61,7 @@
     },
     created() {
       localStorage.removeItem('user');
+      this.$store.dispatch("updateCurrentCorporateer", {})
     }
   }
 </script>
